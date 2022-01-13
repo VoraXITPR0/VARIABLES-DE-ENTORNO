@@ -1,8 +1,17 @@
 FROM python:3.8.5-alpine3.11
-MAINTAINER  Andrés 
-WORKDIR /
-COPY . /
-ENTRYPOINT [ "python3" ]
+MAINTAINER Andrés
+COPY . .
+WORKDIR .
+CMD ["python3","SCRIPT_TXT_HASH.py"]
+
+
+
+
+#FROM python:3.8.5-alpine3.11
+#MAINTAINER  Andrés 
+#WORKDIR /
+#COPY . /
+#ENTRYPOINT [ "python3" ]
 #CMD [ "SCRIPT_TXT_HASH.py" ]
 
 
