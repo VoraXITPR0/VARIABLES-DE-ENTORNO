@@ -2,8 +2,12 @@
 
 from io import open  # IMPORTO modul IO i metode "OPEN" ( permet obrir un arxiu extern)
 import hashlib       # IMPORTO LLIBRERIA HASHLIB
+import os       # IMPORTO  LLIBRERIA 
 
-arxiu_texte=open("/data/names.txt","r")  # Nom de l' arxiu i mode de obertura , en aquest cas LECTURA (READ)
+os.environ['VE']
+arxiu_texte=open(os.environ.get('VE'))
+
+#arxiu_texte=open("/data/names.txt","r")  # Nom de l' arxiu i mode de obertura , en aquest cas LECTURA (READ)
 
 lineas = arxiu_texte.readlines()    #  LLEGIR LINEAS ARXIU 
 
