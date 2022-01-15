@@ -1,9 +1,13 @@
-########  SCRIPT LLEGIR ARXIU TXT i crear HASH MD5,SHA1,SHA256,SHA512 iSHA3-512 By Andrés Manso  #############################
+########  SCRIPT LLEGIR ARXIU TXT AMB VARIABLES ENTORN VE i crear HASH MD5,SHA1,SHA256,SHA512 iSHA3-512 By Andrés Manso  #############################
 
 from io import open  # IMPORTO modul IO i metode "OPEN" ( permet obrir un arxiu extern)
 import hashlib       # IMPORTO LLIBRERIA HASHLIB
+import os       # IMPORTO  LLIBRERIA 
 
-arxiu_texte=open("/data/names.txt","r")  # Nom de l' arxiu i mode de obertura , en aquest cas LECTURA (READ)
+os.environ['VE']="names.txt"
+arxiu_texte=open(os.environ.get('VE'))
+
+#arxiu_texte=open("/data/names.txt","r")  # Nom de l' arxiu i mode de obertura , en aquest cas LECTURA (READ)
 
 lineas = arxiu_texte.readlines()    #  LLEGIR LINEAS ARXIU 
 
