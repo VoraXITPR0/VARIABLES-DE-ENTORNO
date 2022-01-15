@@ -4,7 +4,7 @@ from io import open  # IMPORTO modul IO i metode "OPEN" ( permet obrir un arxiu 
 import hashlib       # IMPORTO LLIBRERIA HASHLIB
 import os       # IMPORTO  LLIBRERIA 
 
-os.environ['VE']="names.txt"
+os.environ['VE']= "/data/names.txt"
 arxiu_texte=open(os.environ.get('VE'))
 
 #arxiu_texte=open("/data/names.txt","r")  # Nom de l' arxiu i mode de obertura , en aquest cas LECTURA (READ)
