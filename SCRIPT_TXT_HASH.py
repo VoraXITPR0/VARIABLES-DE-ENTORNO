@@ -1,12 +1,32 @@
-########  SCRIPT LLEGIR ARXIU TXT AMB VARIABLES ENTORN VE i crear HASH MD5,SHA1,SHA256,SHA512 iSHA3-512 By Andrés Manso  #############################
+########  SCRIPT LLEGIR ARXIU TXT UTILITZO VARIABLE ENTORN crear HASH MD5,SHA1,SHA256,SHA512 iSHA3-512 By Andrés Manso  #############################
 
 from io import open  # IMPORTO modul IO i metode "OPEN" ( permet obrir un arxiu extern)
 import hashlib       # IMPORTO LLIBRERIA HASHLIB
-import os       # IMPORTO  LLIBRERIA 
+import os       # IMPORTO  LLIBRERIA  
+from sys import argv
+import sys
 
-os.environ['VE']= "/data/names.txt"
-arxiu_texte=open(os.environ.get('VE'))
 
+
+
+argumento =str(sys.argv)
+print("Print str :",str(sys.argv))
+argumento =str(sys.argv[1])
+print("Print argumento: ",argumento)
+
+#print("Print str :",str(sys.argv))
+#argumento =str(sys.argv[1])
+#print("Print argumento: ",argumento)
+#os.environ['VE'] = "/data/names.txt"    # VARIABLE DE ENTORNO VE asignamos  el nom de l' arxiu names.txt en DOCKER  "/data/names.txt"
+argumento="/data/"+argumento
+os.environ['VE'] =argumento # "names.txt"
+
+#arxiu_texte = open(os.environ.get('VE'))
+os.environ.get('VE')
+
+
+
+arxiu_texte = open(os.environ.get('VE'))
 #arxiu_texte=open("/data/names.txt","r")  # Nom de l' arxiu i mode de obertura , en aquest cas LECTURA (READ)
 
 lineas = arxiu_texte.readlines()    #  LLEGIR LINEAS ARXIU 
@@ -36,15 +56,6 @@ arxiu_texte.close() # Tanco arxiu després de manipulació
 
 ######################################################################################################
 
-#import hashlib    # Se importa hashlib
 
-#f = open('archivo.txt')    # Se abre el archivo con la información
-#lineas = f.readlines()    # Se leen las lineas del archivo
 
-#h = hashlib.new('md5')    # Se crea el objeto de clase hash
-#for linea in lineas:
-#  linea = str.encode(linea)  # Se convierte el string en un byte string
-#  h.update(linea)    # Se agregan las lineas del archivo al objeto hash
 
-#print("El resultado en bytes del hash es: " + str(h.digest())) # Se imprime el hash en bytes
-#print("El resultado en hexadecimales del hash es: " + str(h.hexdigest())) # Se imprime el hash en caracteres hexadecimales
