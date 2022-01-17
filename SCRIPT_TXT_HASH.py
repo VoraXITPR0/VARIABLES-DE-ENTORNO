@@ -8,25 +8,24 @@ import sys
 
 
 
-
-argumento =str(sys.argv)
-print("Print str :",str(sys.argv))
-argumento =str(sys.argv[1])
-print("Print argumento: ",argumento)
+#argumento =str(sys.argv)
+#print("Print str :",str(sys.argv))
+#argumento =str(sys.argv[0])   # camvi 1 por 0
+#print("Print argumento: ",argumento)
 
 #print("Print str :",str(sys.argv))
 #argumento =str(sys.argv[1])
 #print("Print argumento: ",argumento)
 #os.environ['VE'] = "/data/names.txt"    # VARIABLE DE ENTORNO VE asignamos  el nom de l' arxiu names.txt en DOCKER  "/data/names.txt"
-argumento="/data/"+argumento
-os.environ['VE'] =argumento # "names.txt"
+#argumento="/data/"+argumento
+#os.environ['VE'] =argumento # "names.txt"
 
 #arxiu_texte = open(os.environ.get('VE'))
-os.environ.get('VE')
+argumento=os.environ.get('VE')   # VARIABLE ENTORN pasada  variable argumento
+print(argumento)                # VERIFICACIO SI EXISTE EN LA SESSIÓ
 
 
-
-arxiu_texte = open(os.environ.get('VE'))
+arxiu_texte = open(argumento)
 #arxiu_texte=open("/data/names.txt","r")  # Nom de l' arxiu i mode de obertura , en aquest cas LECTURA (READ)
 
 lineas = arxiu_texte.readlines()    #  LLEGIR LINEAS ARXIU 
@@ -55,7 +54,4 @@ arxiu_texte.close() # Tanco arxiu després de manipulació
 
 
 ######################################################################################################
-
-
-
 
